@@ -1,0 +1,238 @@
+{
+	"info": {
+		"_postman_id": "9d8282bd-0c5c-4420-82e4-2f1d00023bcf",
+		"name": "XYZ Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11303496"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nik",
+									"value": "32017982389623",
+									"type": "text"
+								},
+								{
+									"key": "full_name",
+									"value": "Bima Putra",
+									"type": "text"
+								},
+								{
+									"key": "legal_name",
+									"value": "Bima",
+									"type": "text"
+								},
+								{
+									"key": "tempat_lahir",
+									"value": "Bogor",
+									"type": "text"
+								},
+								{
+									"key": "tanggal_lahir",
+									"value": "12-02-1999",
+									"type": "text"
+								},
+								{
+									"key": "gaji",
+									"value": "1000000",
+									"type": "text"
+								},
+								{
+									"key": "foto_ktp",
+									"type": "file",
+									"src": "/Users/macbook/Downloads/ferdinand-stohr-NFs6dRTBgaM-unsplash.jpg"
+								},
+								{
+									"key": "foto_selfie",
+									"type": "file",
+									"src": "/Users/macbook/Downloads/ferdinand-stohr-NFs6dRTBgaM-unsplash.jpg"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nik\": \"32017982389623\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "Create Transaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nomor_kontrak\": \"yUisab8210843\",\n    \"otr\": \"20000\",\n    \"admin_fee\": 100000,\n    \"jumlah_cicilan\": 500000,\n    \"jumlah_bunga\": 10000,\n    \"nama_asset\": \"Mobil\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/transaction",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"transaction"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Transaction",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nomor_kontrak\": \"yUisab8210843\",\n    \"otr\": \"20000\",\n    \"admin_fee\": 100000,\n    \"jumlah_cicilan\": 500000,\n    \"jumlah_bunga\": 10000,\n    \"nama_asset\": \"Mobil\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/transaction",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"transaction"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 21 Jan 2023 06:59:48 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Berhasil input data cicilan\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Read Transaction",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/transaction",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"transaction"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Read Transaction",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/transaction",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"transaction"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 21 Jan 2023 07:12:20 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "334"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Berhasil mengambil data cicilan\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"nomor_kontrak\": \"yUisab8210843\",\n            \"otr\": \"20000\",\n            \"admin_fee\": 100000,\n            \"jumlah_cicilan\": 500000,\n            \"jumlah_bunga\": 10000,\n            \"nama_asset\": \"Mobil\",\n            \"user_id\": 1,\n            \"user\": {\n                \"id\": 1,\n                \"full_name\": \"Bima Putra\"\n            },\n            \"created_at\": \"0001-01-01T00:00:00Z\",\n            \"updated_at\": \"0001-01-01T00:00:00Z\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
